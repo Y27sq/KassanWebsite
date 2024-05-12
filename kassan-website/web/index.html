@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title> Rubber D*ck Manufacturer </title>
+		<!--
+		Problem: Where to get button assets
+		Solution: Utilize Google Font API
+		Reference: https://developers.google.com/fonts/docs/material_symbols
+		Date: 10 Feb 2023 00:38
+	 -->
+		<!--
+		Problem: How to make a reusable elements
+		Solution: Use JQuery to load the elements on load
+		Reference: https://stackoverflow.com/questions/1229333/how-to-make-reuseable-html-navigation-menus
+		Date: 10 Feb 2023 00:22
+	 -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="index.css">
+		<link rel="stylesheet" href="css/main.css">
+		<script src="./js/html-loader.js"></script>
+		<script src="./js/common-effects.js"></script>
+		<script src="index.js"></script>
+	</head>
+	<body style="background-color:#1e1c2b;">
+	 <div id="common-links"></div>
+	<div id="top-bar"></div>
+		<div id="slides-container">
+			<div id="slide-overlay">
+				<div id="slide-cover">
+				</div>
+				<div id="slide-buttons">
+					<a class="slide-button-container">
+						<span class="material-symbols-outlined slide-button slide-button-left disable-select">arrow_circle_left</span>
+					</a>
+					<a class="slide-button-container">
+						<span class="material-symbols-outlined slide-button slide-button-right disable-select">arrow_circle_right</span>
+					</a>
+				</div>
+			</div>
+			<div id="slide-images">
+			</div>
+		</div>
+		<div id="highlight" class="full-height">
+			<div id="highlight-text-container" class="reveal">
+				<h1 id="highlight-text" class="typeout reveal" data-typeout-text="Highlights" data-typeout-delay=100></h1>
+			</div>
+			<div id="highlight-container">
+				<div id="stock-container" class="reveal">
+					<div id="stock-info">
+						<div id="company-name" class="stock-text">Kossan Rubber Industries Bhd</div>
+						<div id="stock-id" class="stock-text">KOSSAN (7153)</div>
+						<span id="stock-icon" class="material-symbols-outlined stock-text">bar_chart_4_bars</span>
+						<div id="stock-value" class="stock-text"><br><p class="value">RM 1.337</p><p class="change">+0.420 (+0.69%)</p></div>
+						<div id="stock-vol" class="stock-text"><p class="value">Volume 42069</p></div>
+						<div id="stock-high" class="stock-text"><p class="value">High 1.340</p></div>
+						<div id="stock-low" class="stock-text"><p class="value">Low 1.330</p></div>
+						<div id="stock-last-update" class="stock-text"><p class="change">Quotes Updated at 03/04/2023 12:08</p></div>
+					</div>
+					<a id="stock-link-link" href="./">
+						<div id="stock-link">
+							<span class="material-symbols-outlined stock-text stock-link-icon">pie_chart</span>
+							<div id="stock-link-text" class="stock-text">Investor Relations</div>
+							<span class="material-symbols-outlined stock-text stock-link-icon">chevron_right</span>
+						</div>
+					</a>
+					<div id="stock-update-text" class="stock-text">Quotes Updated at 20/04/2069</div>
+				</div>
+				<div id="news-container" class="reveal">
+					<div class="news-item flip-container">
+						<div class="news-item-title-container front">
+							<a>KASSAN Joins the RDA to Protect Rubber D*ck Industry Workers</a>
+						</div>
+						<div class="news-item-title-container back">
+							<a href="./">KASSAN Joins the Rubber D*cks Association to Protect Rubber D*ck Industry Workers in Malaysia, Aids in Unionizing.</a>
+						</div>
+						<img src="/assets/articles/highlight/highlight-202203.jpg" alt="News 01">
+					</div>
+					<div class="news-item flip-container">
+						<div class="news-item-title-container front">
+							<a>KASSAN Industries SDN BHD Wins Supplier Quality Award</a>
+						</div>
+						<div class="news-item-title-container back">
+							<a href="./">KASSAN Industries SDN BHD Wins the General Rotors' Supplier Quality Award for 3 Consecutive Years.</a>
+						</div>
+						<img src="/assets/articles/highlight/highlight-202207.jpg" alt="News 02">
+					</div>
+					<div class="news-item flip-container">
+						<div class="news-item-title-container front">
+							<a>Entrepeneur of the Year: Asia Pacific Enterprise Award 2022</a>
+						</div>
+						<div class="news-item-title-container back">
+							<a href="./">KASSAN's Founder amongst 100 Outstanding Entrepeneurs Awarded with APEA 2022.</a>
+						</div>
+						<img src="/assets/articles/highlight/highlight-20220531.jpg" alt="News 03">
+					</div>
+					<div class="news-item flip-container">
+						<div class="news-item-title-container front">
+							<a>KASSAN Celebrates 100 Years in Business</a>
+						</div>
+						<div class="news-item-title-container back">
+							<a href="./">In Business since 1923, KASSAN Celebrates its 100th Anniversary this September by Giving Back to Our Employees.</a>
+						</div>
+						<img src="/assets/articles/highlight/highlight-202209.jpg" alt="News 04">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="bottom-bar"></div>
+	</body>
+</html>

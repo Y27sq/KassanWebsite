@@ -1,0 +1,8 @@
+.opacify {
+  opacity: 0%;
+  transition: 0.4s;
+}
+
+.opacify.reveal.active {
+  opacity: 100%;
+}

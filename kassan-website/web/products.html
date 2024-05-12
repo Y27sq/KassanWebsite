@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title> Products
+    </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js">
+    </script>
+    <link rel="stylesheet" href="/css/products.css">
+    <script src="/js/html-loader.js">
+    </script>
+    <script src="/js/common-effects.js">
+    </script>
+    <style>
+      .load-reveal {
+        opacity:0}
+      ;
+    </style>
+    <script>
+      $(document).ready(function(){
+        $('.load-reveal').css('opacity', '100%');
+        expand($('#category-container-technical'))
+        let pscc = $('.product-sub-container-container')
+        for (let i=0;i<pscc.length;i++) {
+          let current_cc = $(pscc[i]);
+          current_cc.css("width", current_cc.children().length*100+"%")
+        }
+        $(".product-sub-button").click(function(){
+          let sub_tabs_container = $($(this).parent().parent().find(".product-sub-container-container"))
+          sub_tabs_container.css("transform", "translateX(-"+$(this).data("index")*100+"vw)")
+          $(this).parent().find(".product-sub-button").removeClass("selected")
+          $(this).addClass("selected")
+        }
+                                      )
+        $(".product-sub-button.default").click()
+      }
+                       );
+      function expand(show) {
+        let others = $('.category-container');
+        for (let i=0;i<others.length;i++) {
+          let hide = $(others[i])
+          hide.removeClass('selected')
+          let product_container = $('.product-container')
+          product_container.css({
+            "display": "none"}
+                               )
+          product_container.find(".select-reveal").css({
+            "opacity": "0%"}
+                                                      )
+        }
+        $(show).addClass('selected');
+        let product_container = $('#product-'+$(show).data('reveal')+'-container')
+        // Issue: class select-reveal is not animated when it comes up
+        // Problem: When display is set to inherit and the display changed in the same tick, the change will not be animated with transition
+        // Solution: Delay setting the opacity by 1 tick
+        product_container.css({
+          "display": "inherit"}
+                             )
+        setTimeout(function () {
+          product_container.find(".select-reveal").css({
+            "opacity": "100%"}
+                                                      )
+        }
+                   , 0.0000001);
+      }
+    </script>
+  </head>
+  <body style="background-color:#1e1c2b;">
+    <div id="common-links">
+    </div>
+    <div id="top-bar">
+    </div>
+    <div class="filler">
+      <div id="top-bar-offset-filler">
+      </div>
+      <div id="categories-container">
+        <div id="category-container-technical" class="category-container load-reveal" onclick="expand(this)" data-reveal="technical">
+          <img alt="Tech Rubber Category" class="category-image load-reveal" src="./assets/products/category-tech-rubber.jpg">
+          <div class="category-title-container load-reveal">
+            <h1 class="category-title">Technical Rubber Duck
+            </h1>
+          </div>
+          <p class="category-text load-reveal">We are passionate about delivering quality technical rubber products to our customers. Focus in customized manufacturing, we supply widely to many key industries through our diverse and state-of-art facilities. We have a certified in-house Testing Laboratory to support in material designs and testing to international standards meeting customers’ requirements.
+          </p>
+        </div>
+        <div id="category-container-gloves" class="category-container load-reveal" onclick="expand(this)" data-reveal="gloves">
+          <img alt="Gloves Category" class="category-image load-reveal" src="./assets/products/category-gloves.jpg">
+          <div class="category-title-container load-reveal">
+            <h1 class="category-title">Rubber Gloves
+            </h1>
+          </div>
+          <p class="category-text load-reveal">With many years of experience in glove manufacturing and exports, we take great pride in our extensive range of glove products designed for a diverse range of hand-protection needs. Whether it is for surgery or advanced mathematics, our gloves are able to separate your sweaty meat danglers from the dangerous outside world and vice versa.
+          </p>
+        </div>
+        <div id="category-container-cleanroom" class="category-container load-reveal" onclick="expand(this)" data-reveal="cleanroom">
+          <img alt="Cleanroom Category" class="category-image load-reveal" src="./assets/products/category-cleanroom.jpg">
+          <div class="category-title-container load-reveal">
+            <h1 class="category-title">Cleanroom Ducks
+            </h1>
+          </div>
+          <p class="category-text load-reveal">With protection in mind, we emphasize quality and effective solutions for the cleanroom and industrial market. Our cleanroom ducks are very clean until it is not clean anymore. With only the highest quality clean ducks supplied, you can rest assure that the ducks will remain clean. Unclean ducks will be replace itself spontaneously no questions asked.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="product-technical-container" class="filler product-container">
+      <div class="product-title-container">
+        <h1 class="product-title">Technical Rubber Duck
+        </h1>
+      </div>
+      <center class="select-reveal">
+        <button class="product-sub-button default" data-index=0>Engineered Products
+        </button>
+        <button class="product-sub-button" data-index=1>EVA Products
+        </button>
+        <button class="product-sub-button" data-index=2>Extrusion Products
+        </button>
+        <button class="product-sub-button" data-index=3>Moulded Rubber Products
+        </button>
+        <button class="product-sub-button" data-index=4>Industrial & Printing Rollers
+        </button>
+      </center>
+      <div class="product-sub-container-container select-reveal">
+        <div id="product-engineered" class="product-sub-container">
+          <div class="product-sub-card">
+            <div class="product-sub-title-container">
+              <h1 class="product-title product-sub-title reveal">Marine Duck Fenders
+              </h1>
+            </div>
+            <div class="product-sub-image-container">
+              <img alt="Marine" class="product-sub-image main left reveal" src="./assets/products/tech/marine.png">
+              <img alt="Marine Example" class="product-sub-image sub right reveal" src="./assets/products/tech/marine2.png">
+            </div>
+            <center>
+              <p class="product-sub-desc">
+                Dock fender is a bumper that is used to absorb the kinetic energy of a boat or vessel berthing against a quay wall, jetty and other vessel to prevent damage. We manufacture these fenders using high quality rubber to deliver impact for long term "protection".
+                <br>
+                <br>
+                We produce dock fenders which are most suitable for an application depending on factors such as displacement of the vessel, dimensions, berthing structure, maximum allowable stand-off, tidal variation and other specific-berth conditions. The size of the dock fender unit is based on the berthing energy of the vessel.
+                <br>
+                <br>
+                We are able to customize different types of dock fenders according to desired specifications. Here are some of the types of dock fenders we produce:
+              </p>
+            </center>
+          </div>
+          <div class="product-sub-card">
+            <div class="product-sub-title-container">
+              <h1 class="product-title product-sub-title reveal">High Damping Rubber Bearing (HDRB)
+              </h1>
+            </div>
+            <div class="product-sub-image-container">
+              <img alt="Damp" class="product-sub-image sub left reveal" src="./assets/products/tech/damp2.png">
+              <img alt="Damp Example" class="product-sub-image main right reveal" src="./assets/products/tech/damp.png">
+            </div>
+            <center>
+              <p class="product-sub-desc">
+                We customize High Damping Rubber Bearing (HDRB) for the seismic protection of bridges. Our mega project such as the Longest Bridge in Southeast Asia, the 2nd Penang Bridge in Malaysia uses KOSSAN High Damping Rubber Bearing (HDRB).
+              </p>
+            </center>
+          </div>
+          <div class="product-sub-card">
+            <div class="product-sub-title-container">
+              <h1 class="product-title product-sub-title reveal">Elastomeric Bearings
+              </h1>
+            </div>
+            <div class="product-sub-image-container">
+              <img alt="Elastomer" class="product-sub-image main left reveal" src="./assets/products/tech/elastomer.png">
+              <img alt="Elastomer Example" class="product-sub-image sub right reveal" src="./assets/products/tech/elastomer2.png">
+            </div>
+            <center>
+              <p class="product-sub-desc">
+                We customize and design Elastomeric Rubber Bearings which are used for supporting vertical loads as well as for absorbing bearing rotations and horizontal displacements. It is commonly utilized for buildings, bridges and other civil engineering constructions because they are easy to install, durable and easy for maintenance.
+                <br>
+                <br>
+                We specialize in the following types of bearings and are able to design and customize according to your needs.
+                <br>
+                <br>
+                <span class="material-symbols-outlined">check_circle
+                </span> &nbsp;Elastomeric Laminated Bridge Bearings
+                <br>
+                <span class="material-symbols-outlined">check_circle
+                </span> &nbsp;Elastomeric Rubber Bearings Pad
+                <br>
+                <span class="material-symbols-outlined">check_circle
+                </span> &nbsp;Elastomeric Bearing Strips
+                <br>
+                <br>
+                We design, produce and test to meet BS, EN, AS, AASHTO and other international requirement.
+                <br>
+              </p>
+            </center>
+          </div>
+          <div class="product-sub-card">
+            <div class="product-sub-title-container">
+              <h1 class="product-title product-sub-title reveal">Expansion Joints
+              </h1>
+            </div>
+            <div class="product-sub-image-container">
+              <img alt="Expansion" class="product-sub-image sub left reveal" src="./assets/products/tech/expansion2.png">
+              <img alt="Expansion Example" class="product-sub-image main right reveal" src="./assets/products/tech/expansion.png">
+            </div>
+            <center>
+              <p class="product-sub-desc">
+                An expansion joint or movement joint is an assembly designed to safely absorb the heat-induced expansion and contraction of construction materials, to absorb vibration, to hold parts together, or to allow movement due to ground settlement or earthquakes.
+                <br>
+                We are able to produce expansion joints for various applications such as in buildings, bridges, sidewalks, railway tracks, piping systems, ships, and other structures.
+              </p>
+            </center>
+          </div>
+          <div class="product-sub-card">
+            <div class="product-sub-title-container">
+              <h1 class="product-title product-sub-title reveal">Mill Lining and Mining Industry : Panels and Liners
+              </h1>
+            </div>
+            <div class="product-sub-image-container">
+              <img alt="Mill" class="product-sub-image main left reveal" src="./assets/products/tech/mill.png">
+              <img alt="Mill2 Example" class="product-sub-image sub right reveal" src="./assets/products/tech/mill2.png">
+            </div>
+            <center>
+              <p class="product-sub-desc">
+                The sensitivity of mill and mining areas are crucial to the quality of products used in the building process for the protection of the area and workers.
+                <br>
+                <br>
+                Our accredited laboratories are equipped with comprehensive testing equipment to carry out stringent testing in accordance with International Standards.
+                <br>
+                <br>
+                Trommel panels are installed at the end of grinding mills and scrubbers with rotary drum material separators for screening and grading without process vibration.
+                <br>
+                <br>
+                Rubber screens which we produce are designed to absorb impact, reduce pegging and blinding as well as improve wear life in coarse and heavy duty applications.
+                <br>
+                <br>
+                We are also able to customize liners which are important for containment of fresh water and contained water.
+                <br>
+                <br>
+                <span class="material-symbols-outlined">check_circle
+                </span> &nbsp;Rubber Panel
+                <br>
+                <span class="material-symbols-outlined">check_circle
+                </span> &nbsp;Trommel Panels
+                <br>
+                <span class="material-symbols-outlined">check_circle
+                </span> &nbsp;Screen Panel
+                <br>
+                <span class="material-symbols-outlined">check_circle
+                </span> &nbsp;Liners
+                <br>
+                <span class="material-symbols-outlined">check_circle
+                </span> &nbsp;Lifter Bar
+                <br>
+              </p>
+            </center>
+          </div>
+          <div class="product-sub-card">
+            <div class="product-sub-title-container">
+              <h1 class="product-title product-sub-title reveal">Railway System: Floating Slab Track (FST) Bearings, Lateral Bearings and Rubber Wedge
+              </h1>
+            </div>
+            <div class="product-sub-image-container">
+              <img alt="FST" class="product-sub-image sub left reveal" src="./assets/products/tech/fst2.png">
+              <img alt="FST Example" class="product-sub-image main right reveal" src="./assets/products/tech/fst.png">
+            </div>
+            <center>
+              <p class="product-sub-desc">
+                Trains and railway vehicles cause vibrations to be transmitted through the ground causing problems with and possible damage to adjacent structures, buildings and their occupants.
+                <br>
+                <br>
+                We provide a one-stop solution to address these issues through our engineered rubber customized products such as floating slab tract bearings, lateral bearings and rubber wedge to improve the railway system.
+                <br>
+              </p>
+            </center>
+          </div>
+          <div class="product-sub-card">
+            <div class="product-sub-title-container">
+              <h1 class="product-title product-sub-title reveal">Mechanical Pot Bearing
+              </h1>
+            </div>
+            <div class="product-sub-image-container">
+              <img alt="Pot" class="product-sub-image main left reveal" src="./assets/products/tech/pot.png">
+              <img alt="Pot Example" class="product-sub-image sub right reveal" src="./assets/products/tech/pot2.png">
+            </div>
+            <center>
+              <p class="product-sub-desc">
+                Pot Bearings are suitable for high loads, displacements and rotations.
+                <br>
+                Pot Bearings basically consist of an elastomeric pad restrained in a metallic pot. The pad is then compressed by a piston with bearing pressures depending on the design standard required.
+                <br>
+                We are capable to design, fabricate, test and install pot bearings up to vertical load of 50,000 KN.
+                <br>
+              </p>
+            </center>
+          </div>
+        </div>
+        <div id="product-eva" class="product-sub-container">
+          Box 2
+        </div>
+        <div id="product-extrusion" class="product-sub-container">
+          Box 3
+        </div>
+        <div id="product-moulded" class="product-sub-container">
+          Box 4
+        </div>
+        <div id="product-industrial" class="product-sub-container">
+          Box 4
+        </div>
+      </div>
+    </div>
+    <div id="product-gloves-container" class="filler product-container">
+      <div class="product-title-container">
+        <h1 class="product-title">Rubber Gloves
+        </h1>
+      </div>
+      <center class="select-reveal">
+        <button class="product-sub-button default" data-index=0>Healthcare
+        </button>
+        <button class="product-sub-button" data-index=1>Specialty
+        </button>
+        <button class="product-sub-button" data-index=2>Cleanroom
+        </button>
+        <button class="product-sub-button" data-index=3>All Products
+        </button>
+      </center>
+      <div class="product-sub-container-container select-reveal">
+        <div id="product-healthcare" class="product-sub-container">
+          <div class="product-sub-card">
+            <div class="glove-card-container">
+              <div class="glove-card">
+                <h1 class="product-title left glove-title reveal">Examination
+                </h1>
+                <h2 class="product-title glove-sub-title reveal float">OEM Series
+                </h2>
+              </div>
+              <div class="glove-card">
+                <h1 class="product-title right glove-title reveal">Intouch&reg; Sterile Gloves
+                </h1>
+                <h2 class="product-title glove-sub-title reveal float">
+                  <img alt="Intouch Logo"  src="./assets/products/gloves/logo_intouch.png" height="32" style="filter:invert(100%)"> Series
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="product-cleanroom-container" class="filler product-container">
+      <div class="product-title-container">
+        <h1 class="product-title">Cleanroom Ducks
+        </h1>
+      </div>
+    </div>
+    <div id="bottom-bar">
+    </div>
+  </body>
+</html>

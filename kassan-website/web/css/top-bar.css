@@ -1,0 +1,126 @@
+#top-bar {
+	filter: drop-shadow(0px 5px 2px #00000044);
+	width: 100%;
+	height: 96px;
+	padding: 5px;
+	left: 0;
+	right: 0;
+	top: 0;
+/* margin-top:5px; */
+/*padding: 5px;*/
+    background-color: var(--foreground);
+
+/*
+    Problem: How to align items correctly in a row
+    Solution: Use a flexbox
+    Reference: https://www.w3schools.com/csS/css3_flexbox.asp
+    Date: 10 FEB 2023 00:31
+*/
+
+
+  align-items: center;
+	flex: 1 auto;
+	position: fixed;
+	transition: 0.2s;
+	overflow: hidden;
+	z-index: 10;
+}
+
+#top-bar-logo {
+	transition: 0.2s;
+}
+
+#top-bar-left {
+	margin: 10px;
+	margin-left: 10%;
+	align-self: center;
+	filter: drop-shadow(5px 5px 4px #00000044);
+	transition: transform 0.5s;
+	z-index: 11;
+}
+
+#top-bar-right {
+	margin: 0;
+	padding: 10px;
+	width: auto;
+	margin-right: 10%;
+	align-self: center;
+	align-content: space-between;
+	filter: drop-shadow(5px 5px 4px #00000044);
+	transition: transform 0.5s;
+}
+
+.flex {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+
+.top-bar-mid-text {
+	color: white;
+	margin: 10px;
+	margin-top: auto;
+	margin-bottom: auto;
+	top: 50%;
+	border-left: 2px white;
+	font-weight: bold;
+	background-color: var(--accent);
+	padding: 10px;
+	border-radius: 8px;
+	height: 100%;
+	vertical-align: middle;
+	transition: transform 1s;
+}
+
+.top-bar-mid-text:link {
+	text-decoration: none;
+}
+
+.top-bar-search-box {
+	background-color: #00000033;
+	margin-left: 10px;
+	margin-right: 5px;
+	width: 150px;
+	height: 32px;
+	color: white;
+	padding-left: 10px;
+	border-color: white;
+	border-width: 2px;
+	border-radius: 12px;
+	transform: translateY(-4px);
+	transition: width 0.4s;
+}
+
+.top-bar-icon {
+	font-size: 32px;
+	color: white;
+}
+
+.top-bar-text {
+	font-size: 16px;
+	font-style: oblique;
+	font-weight: bold;
+	color: white;
+	align-items: center;
+	padding: 5px;
+}
+
+
+
+
+/* Issue: how to hide element for responsive design purposes */
+/* Solution:  https://stackoverflow.com/questions/13979443/if-screen-resolution-is-less-than-x-append-css#13979463*/
+/* @media (max-width:960px) {
+  #top-bar-right {
+    transform: translateX(200vh);
+  }
+  #top-bar-left {
+    margin: 0px;
+    width: 100%;
+  }
+}
+@media (max-width:600px) {
+  .top-bar-mid-text {
+    transform: translateX(200vw);
+  }
+} */

@@ -1,0 +1,52 @@
+  /*
+  Problem: How to change the background for the whole page?
+  Solution: by selecting the <html> tag and background-color property
+  Reference: https://www.w3schools.com/css/css_background.asp
+  Date: 9 Feb 2023 23:39
+  */
+  html {
+    background-color: var(--background);
+  }
+
+
+  html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+  }
+
+  * {
+    font-family: 'Quicksand', sans-serif;
+  }
+
+  /*
+  Problem: How to reuse colour so that we don't need to hardcode it?
+  Solution: Define them in root
+  Reference: https://stackoverflow.com/questions/1875852/how-can-i-define-colors-as-variables-in-css
+  Date: 9 Feb 2023 23:41
+
+  Intent behind the colour scheme:
+  - To be modern and slick while remaining professional
+  - To represent the company logo for Kassan
+  */
+  :root {
+      --background: #1e1c2b;
+      --foreground: #3f404d;
+      --primary: #EC1C2D;
+      --secondary: #ff0000;
+      --accent: #FC2C3D;
+  }
+
+  .material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+  }
+
+  .disable-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
